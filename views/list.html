@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+  {% block content %}
+<form action="/"  method="post" class="grid">
+  <input name="title" type="text" placeholder="Enter the task title ">
+  <input type="submit" value="Add"> 
+</form>
+<div>
+  {% for task in tasks %}
+    <p><a href="/{{task.id}}">{{task.title|upper}}</a></p>
+  {% endfor %}
+</div>
+  {% endblock %}

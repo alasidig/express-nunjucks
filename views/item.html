@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+  {% block content %}
+{% set isDone='done' if task.done else ''%}
+{% set isDisabled='disabled' if task.done else ''%}
+<div class="grid {{isDone}}">
+   {{task.title}}
+<form action="/{{task.id}}"method="post">
+  <input type="submit" value="Done" {{isDisabled}}>
+</form>
+</div>
+  {% endblock %}
